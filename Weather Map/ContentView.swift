@@ -14,6 +14,21 @@ struct ContentView: View {
         ZStack{
             MapView(screneCoordinate: $screenCoordinate)
                 .edgesIgnoringSafeArea(.all)
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        //create location
+                    }){
+                        Image(systemName: "plus.circle.fill")
+                    }
+                    .padding()
+                    .foregroundColor(.purple)
+                    .font(.largeTitle)
+                    .padding(.trailing)
+                }
+            }
         }
     }
 }
