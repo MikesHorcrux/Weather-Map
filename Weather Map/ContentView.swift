@@ -5,12 +5,16 @@
 //  Created by Mike Van Amburg on 7/15/20.
 //  Copyright © 2020 Mike Van Amburg. All rights reserved.
 //
-
+import MapKit
 import SwiftUI
 
 struct ContentView: View {
+    @State var screenCoordinate = CLLocationCoordinate2D()
     var body: some View {
-        Text("Hello, World!")
+        ZStack{
+            MapView(screneCoordinate: $screenCoordinate)
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
