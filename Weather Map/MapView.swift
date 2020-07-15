@@ -10,24 +10,18 @@ import SwiftUI
 struct MapView: UIViewRepresentable{
     // binding for the center of the screen coord
     @Binding var screneCoordinate: CLLocationCoordinate2D
-    
+    var annotations: [MKPointAnnotation]
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView()
         map.delegate = context.coordinator
         return map
     }
     func updateUIView(_ uiView: MKMapView, context: Context) {
-//        // set coordinates (lat lon)
-//        //let coords = CLLocationCoordinate2D(latitude: 53.062640, longitude: -2.968900)
-//
-//        // set span (radius of points)
-//        let span = MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
-//
-//        // set region
-//        let region = MKCoordinateRegion( center: context, span: span)
-//
-//        // set the view
-//        uiView.setRegion(region, animated: true)
+        //Adding name of the Location and any information
+        if annotations.count != uiView.annotations.count{
+            uiView.removeAnnotations(uiView.annotations)
+            uiView.addAnnotations(annotations)
+        }
     }
     
     func makeCoordinator() -> Coordinator {

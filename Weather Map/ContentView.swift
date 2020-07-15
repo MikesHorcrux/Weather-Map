@@ -10,9 +10,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State var screenCoordinate = CLLocationCoordinate2D()
+    
+    //array to save locations
+    @State var savedLocals = [MKPointAnnotation]()
     var body: some View {
         ZStack{
-            MapView(screneCoordinate: $screenCoordinate)
+            MapView(screneCoordinate: $screenCoordinate, annotations: savedLocals)
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 Spacer()
@@ -20,6 +23,9 @@ struct ContentView: View {
                     Spacer()
                     Button(action: {
                         //create location
+                        let newLocal = MKPointAnnotation()
+                        newLocal.coordinate = self.screenCoordinate
+                        self.savedLocals.append(newLocal)
                     }){
                         Image(systemName: "plus.circle.fill")
                     }
