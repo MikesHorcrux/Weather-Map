@@ -38,5 +38,9 @@ struct MapView: UIViewRepresentable{
         init(_ parent: MapView) {
             self.parent = parent
         }
+        
+        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+            parent.screneCoordinate = mapView.centerCoordinate
+        }
     }
 }
