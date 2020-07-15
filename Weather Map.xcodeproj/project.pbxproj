@@ -14,6 +14,7 @@
 		2759F24E24BF888A00E41CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2759F24D24BF888A00E41CBF /* Assets.xcassets */; };
 		2759F25124BF888A00E41CBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2759F25024BF888A00E41CBF /* Preview Assets.xcassets */; };
 		2759F25424BF888A00E41CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759F25224BF888A00E41CBF /* LaunchScreen.storyboard */; };
+		2759F25C24BF88A400E41CBF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759F25B24BF88A400E41CBF /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2759F25024BF888A00E41CBF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2759F25324BF888A00E41CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2759F25524BF888A00E41CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2759F25B24BF88A400E41CBF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2759F24624BF888900E41CBF /* SceneDelegate.swift */,
 				2759F24B24BF888900E41CBF /* ContentView.swift */,
 				2759F24D24BF888A00E41CBF /* Assets.xcassets */,
+				2759F25B24BF88A400E41CBF /* MapView.swift */,
 				2759F25224BF888A00E41CBF /* LaunchScreen.storyboard */,
 				2759F25524BF888A00E41CBF /* Info.plist */,
 				2759F24824BF888900E41CBF /* Weather_Map.xcdatamodeld */,
@@ -151,6 +154,7 @@
 			files = (
 				2759F24524BF888900E41CBF /* AppDelegate.swift in Sources */,
 				2759F24A24BF888900E41CBF /* Weather_Map.xcdatamodeld in Sources */,
+				2759F25C24BF88A400E41CBF /* MapView.swift in Sources */,
 				2759F24C24BF888900E41CBF /* ContentView.swift in Sources */,
 				2759F24724BF888900E41CBF /* SceneDelegate.swift in Sources */,
 			);
