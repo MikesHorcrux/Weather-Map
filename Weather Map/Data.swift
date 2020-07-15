@@ -9,9 +9,14 @@
 import Foundation
 
 
-struct Weather: Codable {
-    let id: Int
-    let main: String
-    let description: String
-    let icon: String
+struct WeatherApi: Decodable {
+    let main: Weather
+}
+
+struct Weather: Decodable {
+    var temp: Double
+    var feelsLike: Double
+    var min: Double
+    var presure: Double
+    var humidity: Double
 }

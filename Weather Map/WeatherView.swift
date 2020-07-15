@@ -20,38 +20,37 @@ struct WeatherView: View {
     @State private var loadingState = LoadingState.loading
     var body: some View {
         NavigationView{
-            Form{
-                Section{
-                    Text("Location: ")
-                    
+            VStack{
+            Text("Current Weather")
+        }
+        }
+    }
+    func fetchNearbyPlaces() {
+        let urlString = "api.openweathermap.org/data/2.5/weather?lat={\(placemarker.coordinate.latitude)}&lon={\(placemarker.coordinate.longitude)}&appid={14137244db6f0d246115303b9a89125f}"
+
+        guard let url = URL(string: urlString) else {
+            print("Bad URL: \(urlString)")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                // we got some data back!
+                let decoder = JSONDecoder()
+
+                if let items = try? decoder.decode(WeatherApi.self, from: data) {
+                    // success – convert the array values to our pages array
+                    self.weather = Array(arrayLiteral: items.main)
+                    self.loadingState = .loaded
+                    print("bazinga")
+                    return
                 }
             }
-        }
-        func fetchNearbyPlaces() {
-            let urlString = "api.openweathermap.org/data/2.5/weather?lat={\(placemarker.coordinate.latitude)}&lon={\(placemarker.coordinate.longitude)}&appid={14137244db6f0d246115303b9a89125f}"
-            
-            guard let url = URL(string: urlString) else {
-                print("Bad URL: \(urlString)")
-                return
-            }
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                    // we got some data back!
-                    let decoder = JSONDecoder()
-                    
-                    if let items = try? decoder.decode(Result.self, from: data){
-                        self.weather = Array(items.weather)
-                        self.loadingState = .loaded
-                        return
-                        
-                    }
-                }
-                
-                // if we're still here it means the request failed somehow
-                self.loadingState = .failed
-            }.resume()
-        }
+
+            // if we're still here it means the request failed somehow
+            self.loadingState = .failed
+            print("nope")
+        }.resume()
     }
 }
 
