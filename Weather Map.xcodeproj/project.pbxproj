@@ -15,6 +15,9 @@
 		2759F25124BF888A00E41CBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2759F25024BF888A00E41CBF /* Preview Assets.xcassets */; };
 		2759F25424BF888A00E41CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759F25224BF888A00E41CBF /* LaunchScreen.storyboard */; };
 		2759F25C24BF88A400E41CBF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759F25B24BF88A400E41CBF /* MapView.swift */; };
+		2759F25E24BFA69500E41CBF /* AnnotationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759F25D24BFA69500E41CBF /* AnnotationObject.swift */; };
+		2759F26024BFA76E00E41CBF /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759F25F24BFA76E00E41CBF /* WeatherView.swift */; };
+		2759F26224BFAF6C00E41CBF /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759F26124BFAF6C00E41CBF /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		2759F25324BF888A00E41CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2759F25524BF888A00E41CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2759F25B24BF88A400E41CBF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2759F25D24BFA69500E41CBF /* AnnotationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationObject.swift; sourceTree = "<group>"; };
+		2759F25F24BFA76E00E41CBF /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		2759F26124BFAF6C00E41CBF /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				2759F24D24BF888A00E41CBF /* Assets.xcassets */,
 				2759F25B24BF88A400E41CBF /* MapView.swift */,
 				2759F25224BF888A00E41CBF /* LaunchScreen.storyboard */,
+				2759F26124BFAF6C00E41CBF /* Data.swift */,
+				2759F25F24BFA76E00E41CBF /* WeatherView.swift */,
+				2759F25D24BFA69500E41CBF /* AnnotationObject.swift */,
 				2759F25524BF888A00E41CBF /* Info.plist */,
 				2759F24824BF888900E41CBF /* Weather_Map.xcdatamodeld */,
 				2759F24F24BF888A00E41CBF /* Preview Content */,
@@ -157,6 +166,9 @@
 				2759F25C24BF88A400E41CBF /* MapView.swift in Sources */,
 				2759F24C24BF888900E41CBF /* ContentView.swift in Sources */,
 				2759F24724BF888900E41CBF /* SceneDelegate.swift in Sources */,
+				2759F26024BFA76E00E41CBF /* WeatherView.swift in Sources */,
+				2759F25E24BFA69500E41CBF /* AnnotationObject.swift in Sources */,
+				2759F26224BFAF6C00E41CBF /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

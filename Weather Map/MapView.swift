@@ -10,6 +10,12 @@ import SwiftUI
 struct MapView: UIViewRepresentable{
     // binding for the center of the screen coord
     @Binding var screneCoordinate: CLLocationCoordinate2D
+    @Binding var selectedLocation: MKPointAnnotation?
+    @Binding var showingLocationWeather: Bool
+    
+    
+    
+    
     var annotations: [MKPointAnnotation]
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView()
@@ -48,6 +54,13 @@ struct MapView: UIViewRepresentable{
                 annotationView?.annotation = annotation
             }
             return annotationView
+        }
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            guard let pin = view.annotation as? MKPointAnnotation else{
+                return
+            }
+            parent.selectedLocation = pin
+            parent.showingLocationWeather = true
         }
     }
 }

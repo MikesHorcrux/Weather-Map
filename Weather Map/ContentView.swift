@@ -13,9 +13,14 @@ struct ContentView: View {
     
     //array to save locations
     @State var savedLocals = [MKPointAnnotation]()
+    
+    
+    @State var selectedLocation: MKPointAnnotation?
+    @State var showingLocationInfo = false
+    @State var ShowingWeather = false
     var body: some View {
         ZStack{
-            MapView(screneCoordinate: $screenCoordinate, annotations: savedLocals)
+            MapView(screneCoordinate: $screenCoordinate, selectedLocation: $selectedLocation, showingLocationWeather: $showingLocationInfo, annotations: savedLocals)
                 .edgesIgnoringSafeArea(.all)
             Circle()
                 .frame(width: 5, height: 5)
@@ -30,6 +35,8 @@ struct ContentView: View {
                         newLocal.title = "Location Example"
                         newLocal.coordinate = self.screenCoordinate
                         self.savedLocals.append(newLocal)
+                        
+                        self.ShowingWeather = true
                     }){
                         Image(systemName: "plus.circle.fill")
                     }
@@ -39,6 +46,11 @@ struct ContentView: View {
                     .padding(.trailing)
                 }
             }
+        }.alert(isPresented: $showingLocationInfo){
+            Alert(title: Text(selectedLocation?.title ?? "Unknown"), message: Text(selectedLocation?.subtitle ?? "unknown"), dismissButton: .default(Text("Ok")))
+        }
+        .sheet(isPresented: $ShowingWeather){
+            Text("weather")
         }
     }
 }
