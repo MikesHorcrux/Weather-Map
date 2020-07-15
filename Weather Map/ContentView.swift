@@ -17,6 +17,9 @@ struct ContentView: View {
         ZStack{
             MapView(screneCoordinate: $screenCoordinate, annotations: savedLocals)
                 .edgesIgnoringSafeArea(.all)
+            Circle()
+                .frame(width: 5, height: 5)
+                .foregroundColor(.green)
             VStack{
                 Spacer()
                 HStack{
@@ -24,6 +27,7 @@ struct ContentView: View {
                     Button(action: {
                         //create location
                         let newLocal = MKPointAnnotation()
+                        newLocal.title = "Location Example"
                         newLocal.coordinate = self.screenCoordinate
                         self.savedLocals.append(newLocal)
                     }){
